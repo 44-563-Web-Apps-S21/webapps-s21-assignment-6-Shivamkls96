@@ -23,7 +23,7 @@
 
 <script> 
     var correct = 0;
-    var wrogn = 0;
+    var wrong = 0;
          
     function processPhrase(){
     secret = document.getElementById("secret_word").value
@@ -33,12 +33,13 @@
     {
         correct++
         alert("Access Allowed")
+        out.innerHTML = "correct count" + correct
     } 
     else {
-        wrogn++
+        wrong++
         alert("Access Denied")
-    }
-    out.innerHTML = "correct count" + correct + "wrong count:" +wrong  
+        out.innerHTML = "wrong count:" +wrong  
+    } 
 }
 </script>
 
