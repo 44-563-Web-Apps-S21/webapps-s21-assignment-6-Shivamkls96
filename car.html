@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>
+        Welcome to car page
+    </title>
+</head>
+<body>
+
+<h2>Shiva Krishna Myakala Orders a car</h2>
+
+<form>
+    <input type="checkbox" id="checkbox1" name="checkbox" value="electric">
+    <label for="radio1">electric </label></br>
+
+    <input type="checkbox" id="checkbox2" name="checkbox" value="ac">
+    <label for="radio1">ac </label></br>
+
+    <input type="checkbox" id="checkbox3" name="checkbox" value="gps">
+    <label for="radio1">gps </label></br>
+    <br>
+    <button type="button" onclick="orderCar()">Order a car</button>
+
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+        let my_car = {};
+        function orderCar() 
+        {
+            my_car = {};
+
+            if (document.getElementById("checkbox1").checked) 
+            {
+                my_car.electric = true;
+            }
+            else
+            {
+                my_car.electric = false;
+            }
+            if (document.getElementById("checkbox2").checked)
+            {
+                my_car.ac = true;
+            }
+            else
+            {
+                my_car.ac = false;
+            }
+            if (document.getElementById("checkbox3").checked) 
+            {
+                my_car.gps = true;
+            }
+            else
+            {
+                my_car.gps = false;
+            }
+            document.getElementById("result").innerHTML = JSON.stringify(my_car);
+        }
+</script>
+
+</body>
+</html> 
