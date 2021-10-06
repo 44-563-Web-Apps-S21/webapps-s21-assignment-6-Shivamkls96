@@ -21,6 +21,10 @@
 
 <p id="result">Result will be displayed </p>
 
+<div class="container">
+    <img src="kangaroo.jpg" class="img-fluid" alt="kangaroo" height="200" width="200" id="kangaroo" onclick=newImage()>
+</div>
+
 <script> 
     var correct = 0;
     var wrong = 0;
@@ -41,6 +45,28 @@
         out.innerHTML = "wrong count:" +wrong  
     } 
 }
+    let usingImage = 1;
+    function newImage()
+    {
+     img = document.getElementById("kangaroo")
+     switch (usingImage) {
+        case 1:
+            img.src = "Lion.jpg"
+            usingImage = 2
+            break;
+        case 2:
+            img.src = "yak.jpg"
+            usingImage = 3
+            break;
+        case 3:
+            img.src = "kangaroo.jpg"  
+            usingImage = 1
+            break;  
+        default:
+            break;
+    }
+}
+
 </script>
 
 </body>
