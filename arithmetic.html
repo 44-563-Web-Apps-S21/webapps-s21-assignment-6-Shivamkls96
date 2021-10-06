@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Arithmetic Page
+    </title>
+</head> 
+
+
+<body>
+
+<h2>Shiva Krishna Myakala Computes</h2>
+
+<form>
+    <label for="baseNum">Enter a base </label>
+    <input type ="number" id="baseNum" name="baseNum" value=10> <br>
+
+    <label for="form1_nick">Enter an exponent </label>
+    <input type ="number" id="exponentNum" name="exponentNum"> <br>
+
+    <button type="button" onclick="powers()"> Compute </button> <br>
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+        function powers() {
+            let result = "";
+            let res = 1;
+            let baseNum = document.getElementById("baseNum").value;
+            let exponentNum = document.getElementById("exponentNum").value;
+            for (i = 0; i < exponentNum; i++) {
+                res = res * baseNum;
+                result += res+" " ;
+            }
+            document.getElementById("result").innerHTML = "Powers of base are: " + result +" ";
+        }
+
+</script>
+
+</body>
+</html> 
