@@ -23,10 +23,28 @@
 
 
 <p id="result">This text will be replaced </p>
+<br>
+<form>
+    <input type="radio" id="rd1_plus" name="radio" value="plus" onClick="processRadio()" >
+    <label for="rd1_plus"> + </label></br>
+    <br>
+    <input type="radio" id="rd1_minus" name="radio" value="minus" onClick="processRadio()">
+    <label for="rd1_minus"> - </label></br>
+    <br>
+    <input type="radio" id="rd1_times" name="radio" value="times" onClick="processRadio()">
+    <label for="rd1_times"> * </label></br>
+    <br>
+    <input type="radio" id="rd1_divide" name="radio" value="divide" onClick="processRadio()">
+    <label for="rd1_divide"> / </label></br>
+    <br>
+</form>
+
+<p id="resultRadio">The result will be displayed here </p>
 
 <script> 
 
-        function powers() {
+        function powers() 
+        {
             let result = "";
             let res = 1;
             let baseNum = document.getElementById("baseNum").value;
@@ -37,7 +55,41 @@
             }
             document.getElementById("result").innerHTML = "Powers of base are: " + result +" ";
         }
-
+        function processRadio()
+        {
+            let value1 = document.getElementById("baseNum").value
+            let value2 = document.getElementById("exponentNum").value
+            if (document.getElementById("rd1_plus").checked)
+            {
+                const sum = parseInt(value1) + parseInt(value2);
+                document.getElementById("resultRadio").innerHTML = " The sum of " + value1 + " and " + value2 + " is : " + sum;
+                document.getElementById("rd1_minus").checked = false;
+                document.getElementById("rd1_times").checked = false;
+                document.getElementById("rd1_divide").checked = false
+            } 
+            else if (document.getElementById("rd1_minus").checked)
+            {
+                const sub = parseInt(value1) - parseInt(value2);
+                document.getElementById("resultRadio").innerHTML = " The subraction of " + value1 + " and " + value2 + " is : " + sub;
+                document.getElementById("rd1_plus").checked = false;
+                document.getElementById("rd1_times").checked = false;
+                document.getElementById("rd1_divide").checked = false;
+            } 
+            else if (document.getElementById("rd1_times").checked) 
+            {
+                document.getElementById("resultRadio").innerHTML = " The multiplication of " + value1 + " and " + value2 + " is : " + value1 * value2;
+                document.getElementById("rd1_plus").checked = false;
+                document.getElementById("rd1_minus").checked = false;
+                document.getElementById("rd1_divide").checked = false;
+            } 
+            else if (document.getElementById("rd1_divide").checked) 
+            {
+                document.getElementById("resultRadio").innerHTML = " The division of " + value1 + " and " + value2 + " is : " + value1 / value2;
+                document.getElementById("rd1_plus").checked = false;
+                document.getElementById("rd1_minus").checked = false;
+                document.getElementById("rd1_times").checked = false;
+            }
+        }
 </script>
 
 </body>
