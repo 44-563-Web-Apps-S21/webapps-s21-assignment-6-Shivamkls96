@@ -24,7 +24,22 @@
 
 </form>
 
-<p id="result">This text will be replaced </p>
+<p id="result">The result will be displayed here </p>
+
+<form>
+    <input type="text" id="color" name="color" value="color">
+    <label for="color">Enter a property </label></br>
+
+    <input type="text" id="value" name="value">
+    <label for="value">Enter a value </label></br>
+
+    <button type = "button" onclick="updateCar()">update the car</button>
+
+</form>
+
+<p id="result2">The result will be displayed here</p>
+
+
 
 <script> 
         let my_car = {};
@@ -58,6 +73,15 @@
             }
             document.getElementById("result").innerHTML = JSON.stringify(my_car);
         }
+    
+        function updateCar() 
+        {
+            let value1 = document.getElementById("color").value;
+            let value2 = document.getElementById("value").value;
+            my_car.color = value2 ;
+            document.getElementById("result2").innerHTML = JSON.stringify(my_car); 
+        }
+
 </script>
 
 </body>
